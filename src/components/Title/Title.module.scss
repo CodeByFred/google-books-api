@@ -1,0 +1,15 @@
+@use "../../styles/media-queries" as mq;
+@use "../../styles/mixins";
+
+.heading {
+  @include mixins.font-heading(4rem);
+  margin: 0;
+
+  @include mq.phone() {
+    @include mixins.font-heading(3rem);
+  }
+
+  @include mq.tablet() {
+    @include mixins.font-heading(3.5rem);
+  }
+}

@@ -1,0 +1,24 @@
+@use "./colors";
+
+@mixin flex($direction: row, $justify: flex-start, $align: normal) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin font-heading($font-size) {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: $font-size;
+  color: colors.$text-main;
+}
+
+@mixin font-body($font-size) {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: $font-size;
+  color: colors.$text-main;
+}
