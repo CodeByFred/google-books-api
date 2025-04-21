@@ -2,14 +2,18 @@
 @use "../../styles/mixins";
 
 .heading {
-  @include mixins.font-heading(4rem);
+  @include mixins.font-heading(3rem);
   margin: 0;
 
-  @include mq.phone() {
-    @include mixins.font-heading(3rem);
+  @include mq.tablet() {
+    @include mixins.font-heading(2rem);
   }
 
-  @include mq.tablet() {
-    @include mixins.font-heading(3.5rem);
+  @include mq.pc() {
+    @include mixins.font-heading(4rem);
+  }
+
+  @include mq.uhd() {
+    @include mixins.font-heading(6rem);
   }
 }

@@ -1,0 +1,22 @@
+@use "../../styles/mixins";
+
+img {
+  width: 90%;
+  max-width: 350px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.card {
+  padding: 2rem;
+  @include mixins.flex(column, center, center);
+  width: 90%;
+  max-width: 325px;
+  max-height: 800px;
+}
+
+.details {
+  @include mixins.font-body(1rem);
+}

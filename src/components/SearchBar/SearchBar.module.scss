@@ -1,9 +1,16 @@
+@use "../../styles/colors";
+@use "../../styles/media-queries" as mq;
+
 .search {
   width: 80%;
   height: 35px;
   max-width: 375px;
   padding: 0.5rem 1rem;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid colors.$gray-medium;
   margin-top: 6rem;
+
+  @include mq.uhd() {
+    max-width: 450px;
+  }
 }
