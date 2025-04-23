@@ -6,46 +6,51 @@ const BookCard = ({ book }) => {
 
   const {
     title = "Untitled",
-    authors = [],
+    subtitle = "",
+    authors = ["Unknown"],
     publishedDate = "Unknown",
-    pageCount = "N/A",
-    description = "No description available.",
+    // pageCount = "N/A",
+    // description = "No description available.",
     imageLinks,
-    industryIdentifiers,
+    // industryIdentifiers,
   } = book.volumeInfo;
 
   const thumbnail = imageLinks?.thumbnail || placeholderImage;
 
-  const isbn =
-    industryIdentifiers?.find((id) => id.type === "ISBN_13")?.identifier ||
-    industryIdentifiers?.find((id) => id.type === "ISBN_10")?.identifier ||
-    "N/A";
+  // const isbn =
+  //   industryIdentifiers?.find((id) => id.type === "ISBN_13")?.identifier ||
+  //   industryIdentifiers?.find((id) => id.type === "ISBN_10")?.identifier ||
+  //   "N/A";
 
-  const truncate = (text, limit = 125) =>
+  const truncate = (text, limit) =>
     text.length > limit ? text.slice(0, limit) + "..." : text;
 
   return (
     <div className={classes.card}>
-      <img src={thumbnail} alt={title} />
+      <div className={classes.img_container}>
+        <img src={thumbnail} alt={title} />
+      </div>
       <div className={classes.details}>
-        <h2>{title}</h2>
-        {authors.length > 0 && (
-          <p>
-            <strong>Author(s):</strong> {authors.join(", ")}
-          </p>
-        )}
+        <div className={classes.title}>
+          <h2>{truncate(`${title} ${subtitle}`, 40)}</h2>
+        </div>
+
         <p>
-          <strong>ISBN:</strong> {isbn}
+          <strong>Author(s):</strong> {truncate(authors.join(", "), 26)}
         </p>
+
+        {/* <p>
+          <strong>ISBN:</strong> {isbn}
+        </p> */}
         <p>
           <strong>Published:</strong> {publishedDate}
         </p>
-        <p>
+        {/* <p>
           <strong>Pages:</strong> {pageCount}
-        </p>
-        <p>
-          <strong>Description:</strong> {truncate(description)}
-        </p>
+        </p> */}
+        {/* <p>
+          <strong>Description:</strong> {truncate(description, 125)}
+        </p> */}
       </div>
     </div>
   );

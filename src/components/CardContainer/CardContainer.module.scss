@@ -1,0 +1,11 @@
+@use "../../styles/mixins";
+
+.container {
+  // border: 1px solid purple;
+  @include mixins.flex(center, center, center);
+  width: 100%;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+  padding: 1rem;
+  gap: 2rem;
+}

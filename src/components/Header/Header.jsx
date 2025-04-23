@@ -3,7 +3,7 @@ import image from "../../assets/unsplash.jpg";
 import Title from "../Title/Title";
 import SearchBar from "../SearchBar/SearchBar";
 
-const Header = () => {
+const Header = ({ handleClick, inputRef }) => {
   return (
     <div className={classes.wrapper}>
       <div className={classes.image} style={{ backgroundImage: `url(${image})` }} />
@@ -12,7 +12,7 @@ const Header = () => {
         <small className={classes.quote}>
           “If you don't like to read, you haven't found the right book.”
         </small>
-        <SearchBar />
+        <SearchBar handleClick={handleClick} term={inputRef} />
       </div>
     </div>
   );

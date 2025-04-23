@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 import { getBooks } from "../api/google-api.js";
-import BookCard from "../components/BookCard/BookCard";
+import CardContainer from "../components/CardContainer/CardContainer.jsx";
 
-const BookSearch = () => {
+const BookSearch = ({ term }) => {
   const [items, setItems] = useState(null);
   const [error, setError] = useState(null);
   const [searchStatus, setSearchStatus] = useState(null);
 
   useEffect(() => {
     setSearchStatus("FETCHING");
-    getBooks("flowers+for+algernon")
+    getBooks(term)
       .then((items) => {
         setSearchStatus("SUCCESS");
         setItems(items);
@@ -17,17 +17,17 @@ const BookSearch = () => {
       .catch((e) => {
         setSearchStatus("FAIL");
         setError(e);
-        console.log(error);
+        console.log(e);
       });
-  }, []);
+  }, [term]);
 
   return (
     <>
       {searchStatus == "FETCHING" && <p>Getting Book Results</p>}
       {searchStatus == "FAIL" && (
-        <p style={{ color: "red" }}>Failure to Retrive Book(s) Information</p>
+        <p style={{ color: "red" }}>Failure to Retrive Book(s) Information: {error}</p>
       )}
-      {searchStatus === "SUCCESS" && <BookCard book={items} />}
+      {searchStatus === "SUCCESS" && <CardContainer book={items} />}
     </>
   );
 };

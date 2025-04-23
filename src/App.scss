@@ -1,3 +1,7 @@
 @use "./styles/colors";
 @use "./styles/media-queries";
 @use "./styles/mixins";
+
+main {
+  @include mixins.flex(column, center, center);
+}

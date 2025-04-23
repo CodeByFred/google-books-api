@@ -1,0 +1,16 @@
+@use "../../styles/colors";
+@use "../../styles/media-queries" as mq;
+@use "../../styles/mixins";
+
+.results {
+  // border: 1px solid red;
+  @include mixins.flex(column, $align: center);
+  background-color: colors.$background;
+  height: 100vh;
+  width: 100%;
+  padding: 2rem;
+
+  @include mq.pc() {
+    padding: 4rem;
+  }
+}

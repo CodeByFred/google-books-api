@@ -1,8 +1,14 @@
+@use "../../styles/colors";
 @use "../../styles/mixins";
+
+strong {
+  font-weight: 900;
+}
 
 img {
   width: 90%;
-  max-width: 350px;
+  max-width: 150px;
+  max-height: 200px;
 }
 
 h2 {
@@ -10,11 +16,26 @@ h2 {
 }
 
 .card {
-  padding: 2rem;
-  @include mixins.flex(column, center, center);
+  padding: 1.5rem;
+  @include mixins.flex(column, flex-start, center);
   width: 90%;
   max-width: 325px;
-  max-height: 800px;
+  height: 395px;
+  border: 1px solid colors.$shadow-dark;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 12px colors.$shadow-dark;
+}
+
+.img_container {
+  width: 150px;
+  height: 200px;
+  @include mixins.flex(column, center, center);
+}
+
+.title {
+  width: 100%;
+  height: 56px;
 }
 
 .details {
