@@ -17,6 +17,6 @@
   box-shadow: 0 10px 30px colors.$shadow-dark;
 
   &:hover {
-    background: linear-gradient(#6aa8e7, colors.$button);
+    background: linear-gradient(colors.$button, colors.$accent);
   }
 }

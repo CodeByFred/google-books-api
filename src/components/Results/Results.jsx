@@ -2,7 +2,6 @@ import classes from "./Results.module.scss";
 import SearchBar from "../SearchBar/SearchBar";
 import Title from "../Title/Title";
 import BookSearch from "../../hooks/BookSearch";
-import Button from "../Button/Button";
 
 const Results = ({ handleClick, query, inputRef }) => {
   return (

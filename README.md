@@ -37,3 +37,17 @@ Application Design (required):
 
 - Give feedback to the user when no book results can be found for the query.
 - When a user clicks a book in the grid, a modal should appear with more book information, think about release, publish date, country, languages, etc.
+
+## Links
+
+#### Trello
+
+https://trello.com/b/gz73XbCz/google-books-api
+
+#### Figma
+
+https://www.figma.com/design/apMCX9p3YgG0O4tYeBhEdr/Google-Books-API-Search-Engine?node-id=0-1&p=f&t=nUU2BRS5A8jtFJZr-0
+
+#### Color Palette
+
+https://coolors.co/8b1e3f-f8f6f1-928563-0a1045-547aa5

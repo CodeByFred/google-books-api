@@ -1,7 +1,7 @@
 import classes from "./BookCard.module.scss";
 import placeholderImage from "../../assets/placeholder.jpg";
 
-const BookCard = ({ book }) => {
+const BookCard = ({ book, index }) => {
   if (!book || !book.volumeInfo) return null;
 
   const {
@@ -26,7 +26,7 @@ const BookCard = ({ book }) => {
     text.length > limit ? text.slice(0, limit) + "..." : text;
 
   return (
-    <div className={classes.card}>
+    <div className={classes.card} style={{ animationDelay: `${index * 0.2}s` }}>
       <div className={classes.img_container}>
         <img src={thumbnail} alt={title} />
       </div>

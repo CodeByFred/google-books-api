@@ -2,9 +2,9 @@
 @use "../../styles/mixins";
 
 .heading {
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.4rem;
   @include mixins.font-heading(3rem);
-  margin: 1rem;
+  margin: 0.5rem;
 
   @include mq.tablet() {
     @include mixins.font-heading(2rem);

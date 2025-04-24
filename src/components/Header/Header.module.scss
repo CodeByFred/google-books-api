@@ -8,10 +8,10 @@
   height: 100vh;
   width: 100%;
   flex-direction: column;
-  background: linear-gradient(colors.$background 45%, #696047);
+  background: linear-gradient(colors.$background 45%, colors.$background-gradient);
 
   @include mq.pc {
-    background: linear-gradient(colors.$background, #696047);
+    background: linear-gradient(colors.$background, colors.$background-gradient);
     flex-direction: row;
   }
 }
@@ -41,6 +41,7 @@
 }
 
 .quote {
-  @include mixins.font-body(0.9em);
-  margin: 0.6rem 0 6rem 0;
+  @include mixins.font-body(0.8em);
+  margin: 0rem 0 6rem 0;
+  text-align: center;
 }

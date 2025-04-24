@@ -1,5 +1,4 @@
 export const getBooks = async (query) => {
-  console.log("Called Function");
   const apiKey = import.meta.env.VITE_GOOGLE_BOOKS_API_KEY;
 
   const response = await fetch(
@@ -7,7 +6,9 @@ export const getBooks = async (query) => {
   );
 
   if (!response.ok) {
-    console.log(response);
+    if (!response.ok) {
+      console.log(`'Rut Roh! Something went wrong.' Reponse: ${response.status}`);
+    }
   }
 
   const data = await response.json();
