@@ -17,10 +17,10 @@ h2 {
 }
 
 .card {
-  padding: 1.5rem;
+  padding: 1rem;
   @include mixins.flex(column, flex-start, center);
-  width: 90%;
-  max-width: 325px;
+  // width: 90%;
+  width: 325px;
   height: 395px;
   border: 1px solid colors.$shadow-dark;
   background-color: #fff;

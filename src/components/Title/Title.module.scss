@@ -7,7 +7,7 @@
   margin: 0.5rem;
 
   @include mq.tablet() {
-    @include mixins.font-heading(2rem);
+    @include mixins.font-heading(3.5rem);
   }
 
   @include mq.pc() {

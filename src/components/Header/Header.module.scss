@@ -42,6 +42,7 @@
 
 .quote {
   @include mixins.font-body(0.8em);
-  margin: 0rem 0 6rem 0;
+  padding: 0 0.5rem;
+  margin-bottom: 4rem;
   text-align: center;
 }
