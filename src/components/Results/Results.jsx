@@ -9,6 +9,11 @@ const Results = ({ handleClick, query, inputRef }) => {
       <div className={classes.results}>
         <Title />
         <SearchBar handleClick={handleClick} term={inputRef} />
+        {query && (
+          <p className={classes.queryResult}>
+            Showing results for: <strong>"{query}"</strong>
+          </p>
+        )}
         <BookSearch term={query} />
       </div>
     </>
@@ -16,7 +21,3 @@ const Results = ({ handleClick, query, inputRef }) => {
 };
 
 export default Results;
-
-/* 
-
- */

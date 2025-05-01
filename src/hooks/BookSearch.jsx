@@ -38,7 +38,17 @@ const BookSearch = ({ term }) => {
       {searchStatus == "FAIL" && (
         <p style={{ color: "red" }}>Failure to Retrive Book(s) Information: {error}</p>
       )}
-      {searchStatus === "SUCCESS" && <CardContainer book={items} />}
+      {searchStatus === "SUCCESS" && (
+        <>
+          {Array.isArray(items) && items.length > 0 ? (
+            <CardContainer book={items} />
+          ) : (
+            <div style={{ textAlign: "center", marginTop: "2rem" }}>
+              <p>Try a different title, author, or ISBN.</p>
+            </div>
+          )}
+        </>
+      )}
     </>
   );
 };

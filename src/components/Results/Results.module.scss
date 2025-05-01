@@ -3,10 +3,13 @@
 @use "../../styles/mixins";
 
 .results {
-  // border: 1px solid red;
+  p {
+    @include mixins.font-body(1rem);
+  }
+
   @include mixins.flex(column, $align: center);
   background-color: colors.$background;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   padding: 2rem;
 
